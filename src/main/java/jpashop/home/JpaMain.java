@@ -1,6 +1,8 @@
 package jpashop.home;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -31,8 +33,19 @@ public class JpaMain {
 			
 			em.persist(member);
 			
+			em.flush();
+			em.clear();
+			
 			Team findTeam=member.getTeam();
 			System.out.println(" findTeam  : "  + findTeam.getName());
+			
+			Member findMember =em.find(Member.class, member.getId());
+			List<Member> members =findMember.getTeam().getMembers();
+			
+			for(Member m :  members) {
+				System.out.println("m  = " +m.getUsername());
+			}
+			
 			
 			tx.commit();
 		}catch(Exception e) {
