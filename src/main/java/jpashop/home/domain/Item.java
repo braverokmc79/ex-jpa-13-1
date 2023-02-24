@@ -12,11 +12,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Setter
 @Getter
 @DiscriminatorColumn
-public class Item {
+public abstract class Item {
 
 	@Id @GeneratedValue
 	private Long id;
