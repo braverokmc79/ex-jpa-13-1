@@ -1,15 +1,12 @@
 package jpashop.home;
 
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import jpashop.home.domain.Member;
-import jpashop.home.domain.Team;
+import jpashop.home.domain.Movie;
 
 public class JpaMain {
 	public static void main(String[] args) {
@@ -23,29 +20,38 @@ public class JpaMain {
 			
 		try {
 			
-			Team team =new Team();
-			team.setName("TeamA");
-			em.persist(team);
+//			Team team =new Team();
+//			team.setName("TeamA");
+//			em.persist(team);
+//			
+//			Member member =new Member();
+//			member.setUsername("member1");
+//			member.setTeam(team);
+//			
+//			em.persist(member);
+//			
+//			em.flush();
+//			em.clear();
+//			
+//			Team findTeam=member.getTeam();
+//			System.out.println(" findTeam  : "  + findTeam.getName());
+//			
+//			Member findMember =em.find(Member.class, member.getId());
+//			List<Member> members =findMember.getTeam().getMembers();
+//			
+//			for(Member m :  members) {
+//				System.out.println("m  = " +m.getUsername());
+//			}
 			
-			Member member =new Member();
-			member.setUsername("member1");
-			member.setTeam(team);
 			
-			em.persist(member);
+			Movie movie =new Movie();
+			movie.setDirector("aaa");
+			movie.setActor("bbb");
+			movie.setName("바람과함께 사라지다");
+			movie.setPrice(10000);
 			
-			em.flush();
-			em.clear();
 			
-			Team findTeam=member.getTeam();
-			System.out.println(" findTeam  : "  + findTeam.getName());
-			
-			Member findMember =em.find(Member.class, member.getId());
-			List<Member> members =findMember.getTeam().getMembers();
-			
-			for(Member m :  members) {
-				System.out.println("m  = " +m.getUsername());
-			}
-			
+			em.persist(movie);
 			
 			tx.commit();
 		}catch(Exception e) {

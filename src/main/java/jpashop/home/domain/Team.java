@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+//@Entity
 @Getter
 @Setter
 public class Team {
@@ -32,9 +32,9 @@ public class Team {
 	 * 조회만 가능하고 외래키의 값의 업데이트는 member 의 team 에서 업데이트 가능하다.
 	 */
 	@OneToMany(mappedBy = "team")
-	private List<Member> members=new ArrayList();
+	private List<Member> members=new ArrayList<Member>();
 	
 	
 	
-	
+
 }
