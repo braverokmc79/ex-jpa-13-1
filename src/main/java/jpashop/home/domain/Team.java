@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
-//@Entity
+@Entity
 @Getter
 @Setter
 public class Team {
@@ -33,7 +33,6 @@ public class Team {
 	 */
 	@OneToMany(mappedBy = "team")
 	private List<Member> members=new ArrayList<Member>();
-	
 	
 	
 

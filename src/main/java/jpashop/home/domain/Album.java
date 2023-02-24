@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@DiscriminatorValue("A") //타입명 축약
+//@DiscriminatorValue("A") //타입명 축약
 public class Album extends Item{
 	private String artist;
 }

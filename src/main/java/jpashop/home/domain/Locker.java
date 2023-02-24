@@ -5,7 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-//@Entity
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Setter
+@Getter
 public class Locker {
 	
 	@Id @GeneratedValue
