@@ -31,7 +31,7 @@ public class Team {
 	 * 
 	 * 조회만 가능하고 외래키의 값의 업데이트는 member 의 team 에서 업데이트 가능하다.
 	 */
-	@OneToMany(mappedBy = "team")
+	@OneToMany(mappedBy = "team" )
 	private List<Member> members=new ArrayList<Member>();
 	
 	
