@@ -1,6 +1,7 @@
 package jpashop.home.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,4 +32,21 @@ public class Member extends BaseEntity{
 	@JoinColumn(name = "LOCKER_ID")
 	private Locker locker;
 	
+	//기간 Period
+	@Embedded
+	private Period workPeriod;
+	
+	//주소 Address
+	@Embedded
+	private Address homeAddress;
+	
+	
 }
+
+
+
+
+
+
+
+
