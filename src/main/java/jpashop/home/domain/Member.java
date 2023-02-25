@@ -1,5 +1,7 @@
 package jpashop.home.domain;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -40,6 +42,15 @@ public class Member extends BaseEntity{
 	@Embedded
 	private Address homeAddress;
 	
+	//work Address
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="city",column =@Column(name="WORK_CITY")),
+		@AttributeOverride(name="street",column=@Column(name="WORK_STREET") ),
+		@AttributeOverride(name="zipcode",column=@Column(name="WORK_ZIPCODE") )
+		
+	})
+	private Address workAddress;
 	
 }
 
