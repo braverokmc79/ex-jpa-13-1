@@ -46,6 +46,4 @@ public class Address {
 				&& Objects.equals(zipcode, other.zipcode);
 	}
 
-	
-	
 }
