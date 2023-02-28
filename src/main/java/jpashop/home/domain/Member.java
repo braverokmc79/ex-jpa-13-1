@@ -18,14 +18,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 public class Member extends BaseEntity{
+
+
 
 	@Id @GeneratedValue
 	@Column(name="MEMBER_ID")
@@ -33,6 +37,8 @@ public class Member extends BaseEntity{
 	
 	@Column(name="USERNAME")
 	private String username;
+	
+	private int age;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TEAM_ID")
@@ -68,6 +74,12 @@ public class Member extends BaseEntity{
 	@OneToMany(cascade =CascadeType.ALL, orphanRemoval =true )
 	@JoinColumn(name="MEMBER_ID")
 	private List<AddressEntity> addressHistory=new ArrayList<>();
+	
+	
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", username=" + username +", age=" +age+ "]";
+	}
 	
 	
 }
